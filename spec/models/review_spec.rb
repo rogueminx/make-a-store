@@ -33,6 +33,7 @@ describe Review do
     product = Product.new({:name => "Coffee", :origin => "Guatemala", :variety => "Single Origin", :notes => "Very yummy coffee notes.", :price => "22.22"})
     product.save
     review = product.reviews.new({:product_id => product.id, :rating => "3", :author => "amy brain", :description => "a".*(150)})
+    review.save
     expect(review.author()).to(eq("Amy Brain"))
   end
 
