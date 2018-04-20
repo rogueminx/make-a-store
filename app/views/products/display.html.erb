@@ -11,8 +11,8 @@
   <hr>
   <div class="row">
     <p><%= link_to "Edit This Product", edit_product_path(@product) %> |
-    <%= link_to "Delete This Book", products_path, :data => {
-                                                :confirm => "Are you sure?", 
+    <%= link_to "Delete This Book", product_path, :data => {
+                                                :confirm => "Are you sure?",
                                                 :method => "delete"} %></p>
   </div>
 </div>

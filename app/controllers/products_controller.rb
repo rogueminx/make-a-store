@@ -27,4 +27,9 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_path
   end
+
+private
+  def product_params
+    params.require(:product).permit(:name, :origin, :variety, :notes, :price, :featured)
+  end
 end

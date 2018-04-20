@@ -1,2 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+h1 {
+  font-size: 45px;
+}
+
+.body-content {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
