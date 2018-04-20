@@ -1,47 +1,7 @@
+<h3>All Coffee Products</h3>
 
-<div class="table">
-  <div class="row header">
-    <h1>Welcome to the Insufferable Coffee Shop</h1>
-  </div>
-  <div class="row content">
-    <div class="col-md-4">
-      <div class="sub-header">
-        <h3>Who We are</h3>
-      </div>
-      <div class="company-info">
-        <p>Lorem ipsum dolor amet tumblr master cleanse raw denim, hell of narwhal marfa swag health goth coloring book blog street art direct trade. Umami fashion axe vexillologist gentrify, blog distillery yr art party paleo YOLO truffaut chia fingerstache. Cloud bread austin blue bottle, cardigan wayfarers tofu leggings fanny pack literally. Four dollar toast cred af portland, edison bulb kitsch hashtag +1 next level try-hard austin. Farm-to-table ennui butcher, gochujang yr typewriter PBR&B pitchfork shaman. Venmo butcher waistcoat jianbing vegan cloud bread YOLO lyft pinterest cred lomo iceland put a bird on it. Cornhole tote bag prism, drinking vinegar keffiyeh disrupt vinyl iPhone bicycle rights narwhal photo booth.</p>
-        <br>
-        <p>Artisan gastropub next level, mlkshk master cleanse tumblr meh skateboard health goth jianbing. Shabby chic before they sold out ethical XOXO sriracha bushwick yuccie biodiesel. Hammock locavore pabst, wolf helvetica intelligentsia humblebrag truffaut williamsburg. Intelligentsia gastropub chia franzen, williamsburg marfa dreamcatcher bicycle rights umami sartorial kinfolk forage meh microdosing. Humblebrag pour-over umami chartreuse irony helvetica 8-bit master cleanse leggings lomo. Thundercats direct trade flannel bitters polaroid farm-to-table man braid wayfarers art party readymade intelligentsia 8-bit meh.</p>
-        <br>
-        <p>Oh. You need a little dummy text for your mockup? How quaint.</p>
-        <br>
-        <p>I bet you’re still using Bootstrap too…</p>
-        <br>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="sub-header">
-        <h3>New Products</h3>
-      </div>
-      <div class="new-products">
-        <ul>
-          <% @recent_products.each do |product| %>
-          <li><%= link_to product.name, product_path(product) %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="sub-header">
-        <h3>Most Reviewed Products</h3>
-      </div>
-      <div class="reviewed-products">
-        <ul>
-          <% @reviewed_products.each do |product| %>
-          <li><%= link_to product.name, product_path(product) %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<ul>
+  <% @products.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
