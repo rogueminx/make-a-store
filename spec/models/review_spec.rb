@@ -20,4 +20,14 @@ describe Review do
     expect(review.save()).to(eq(false))
   end
 
+  it("validates rating is between 1 and 5") do
+    review = Review.new({:rating => "3", :author => "Amy", :description => "a".*(150)})
+    expect(review.save()).to(eq(true))
+  end
+
+  it("titelizes the name of the author") do
+    review = Review.create({:rating => "3", :author => "amy", :description => "a".*(150)})
+    expect(review.author()).to(eq("Amy"))
+  end
+
 end
