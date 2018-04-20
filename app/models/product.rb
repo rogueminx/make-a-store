@@ -13,8 +13,10 @@ class Product < ActiveRecord::Base
     .joins(:reviews)
     .group("products.id")
     .order("products_count DESC")
-    .limit(5)
+    .limit(10)
     )}
+
+  scope :recently_added, -> { order(created_at: :desc).limit(10)}
 
 private
   def titleize_entries
