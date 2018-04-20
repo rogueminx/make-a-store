@@ -3,11 +3,16 @@
     <h1><%= @product.name %></h1>
   </div>
   <div class="row">
-    <div class="col-md-4">
-      <p>Origin: <%= @product.origin %></p>
-      <p>Variety: <%= @product.variety %></p>
-      <p>Notes: <%= @product.notes %></p>
-      <p>Price: $<%= @product.price %></p>
-    </div>
+    <p>Origin: <%= @product.origin %></p>
+    <p>Variety: <%= @product.variety %></p>
+    <p>Notes: <%= @product.notes %></p>
+    <p>Price: $<%= @product.price %></p>
+  </div>
+  <hr>
+  <div class="row">
+    <p><%= link_to "Edit This Product", edit_product_path(@product) %> |
+    <%= link_to "Delete This Book", products_path, :data => {
+                                                :confirm => "Are you sure?", 
+                                                :method => "delete"} %></p>
   </div>
 </div>

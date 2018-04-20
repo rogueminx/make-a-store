@@ -1,7 +1,13 @@
-<h3>All Coffee Products</h3>
 
-<ul>
-  <% @products.each do |product| %>
-  <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
+<table>
+  <div class="row">
+    <h3>All Coffee Products</h3>
+  </div>
+  <div class="row">
+    <ul>
+      <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
+  </div>
+</table>
