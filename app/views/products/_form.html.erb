@@ -1,9 +1,14 @@
+<%= render "layouts/errors", :object => @product %>
+
 <%= form_for [@product] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
   <%= f.label :origin %>
   <%= f.text_field :origin %>
+  <br>
+  <%= f.label :variety %>
+  <%= f.text_field :variety %>
   <br>
   <%= f.label :notes %>
   <%= f.text_area :notes %>
