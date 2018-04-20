@@ -16,7 +16,7 @@ describe Review do
   end
 
   it("validates rating is between 1 and 5") do
-    review = Review.new({:rating => 7, :author => "Amy", :description => "a".*(150)})
+    review = Review.new({:rating => "7", :author => "Amy", :description => "a".*(150)})
     expect(review.save()).to(eq(false))
   end
 
