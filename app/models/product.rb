@@ -18,6 +18,8 @@ class Product < ActiveRecord::Base
 
   scope :recently_added, -> { order(created_at: :desc).limit(10)}
 
+  scope :from_costa_rica, -> { where("origin like ?", "%Costa Rica%")}
+
 private
   def titleize_entries
     self.name = self.name.titleize
