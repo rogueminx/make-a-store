@@ -6,7 +6,10 @@
 
 ## Description
 
-This web application will allow a fictional store owner to upload new products to their store, and allow users to leave reviews on products.
+This web application will allow a fictional store owner upload new products to their store, and allow users to leave reviews on products.
+
+<kbd><img src="src/assets/images/Screenshot.png" alt=""></kbd>
+
 
 #### Behavior
 1. Allows user to view all products.
