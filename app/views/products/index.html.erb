@@ -1,9 +1,21 @@
 
 <table>
   <div class="row">
+    <% if @search_term != nil %>
+    <h3>All Coffee from <%= @search_term %></h3>
+    <% else %>
     <h3>All Coffee Products</h3>
+    <% end %>
   </div>
   <div class="row">
+    <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search_term, params[:search_term], placeholder: "Search by Origin" %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+    <% if @products.blank? %>
+    <h4>There are no products with the origin <%= @search_term %>.</h4>
+<% end %>
+  <hr>
     <ul>
       <% @products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>

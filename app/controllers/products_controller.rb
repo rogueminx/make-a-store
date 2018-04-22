@@ -1,11 +1,17 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    if params[:search_term]
+      @products = Product.searched_products(params[:search_term])
+      @search_term = params[:search_term]
+    else
+      @products = Product.all
+    end
   end
 
   def show
     @product = Product.find(params[:id])
     @reviews = @product.reviews
+    @search_term =
     render :display
   end
 
@@ -45,6 +51,6 @@ class ProductsController < ApplicationController
 
 private
   def product_params
-    params.require(:product).permit(:name, :origin, :variety, :notes, :price, :featured)
+    params.require(:product).permit(:name, :origin, :variety, :notes, :price, :featured, :search_term)
   end
 end

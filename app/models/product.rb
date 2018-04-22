@@ -20,6 +20,8 @@ class Product < ActiveRecord::Base
 
   scope :from_costa_rica, -> { where("origin like ?", "%Costa Rica%")}
 
+  scope :searched_products, -> (search_term) { where("origin like ?", "%#{search_term}%")}
+
 private
   def titleize_entries
     self.name = self.name.titleize
